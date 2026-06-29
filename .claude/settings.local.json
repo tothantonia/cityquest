@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(mv /home/antoniat/cityquest/cityquest/* /home/antoniat/cityquest/cityquest/.[!.]* /home/antoniat/cityquest/)",
+      "Bash(rmdir /home/antoniat/cityquest/cityquest)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173)",
+      "Bash(node *)",
+      "Bash(curl -s \"http://localhost:5173/src/App.jsx\")",
+      "Bash(curl -s \"http://localhost:5173/src/screens/HomeScreen.jsx\")",
+      "Bash(curl -s \"http://localhost:5173/src/screens/QuestsScreen.jsx\")",
+      "Bash(curl -s \"http://localhost:5173/src/data/gameData.js\")",
+      "Bash(curl -s \"http://localhost:5173/src/screens/MapScreen.jsx\")"
+    ]
+  }
+}
