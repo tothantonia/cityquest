@@ -164,7 +164,7 @@ export const INITIAL_QUESTS = [
     xp: 120,
     distance: "0.3 km",
     location: "Fleet Street, EC4",
-    coords: { lat: 51.5131, lng: -0.1079 },
+    coords: { lat: 51.5100, lng: -0.0827 },
     npcId: "marcus",
     npc: "Centurion Marcus",
     npcQuote: "The church holds secrets few bother to look for. Open your eyes wider than your guidebook.",
