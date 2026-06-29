@@ -132,6 +132,11 @@ function FlyController({ target, onDone }) {
   return null
 }
 
+function MapCentreTracker({ onCentre }) {
+  useMapEvents({ moveend: e => { const c = e.target.getCenter(); onCentre([c.lat, c.lng]) } })
+  return null
+}
+
 // ─── Haversine helpers ────────────────────────────────────────
 function haversineKm(lat1, lng1, lat2, lng2) {
   const R    = 6371
@@ -286,21 +291,11 @@ function LocationList({ markers, playerPos, onSelect }) {
 }
 
 // ─── Screen ───────────────────────────────────────────────────
-export default function MapScreen({ quests, onNavigate }) {
-  const [selected,  setSelected]  = useState(null)
-  const [playerPos, setPlayerPos] = useState(CENTER)
-  const [zoom,      setZoom]      = useState(ZOOM)
-  const [flyTarget, setFlyTarget] = useState(null)
-
-  useEffect(() => {
-    if (!navigator.geolocation) return
-    const id = navigator.geolocation.watchPosition(
-      p  => setPlayerPos([p.coords.latitude, p.coords.longitude]),
-      () => {},
-      { enableHighAccuracy: true, timeout: 8000 }
-    )
-    return () => navigator.geolocation.clearWatch(id)
-  }, [])
+export default function MapScreen({ quests, onNavigate, playerPos, locationPermission, onDiscoverNearby }) {
+  const [selected,   setSelected]   = useState(null)
+  const [zoom,       setZoom]       = useState(ZOOM)
+  const [flyTarget,  setFlyTarget]  = useState(null)
+  const [mapCentre,  setMapCentre]  = useState(CENTER)
 
   const questMarkers = useMemo(() => buildQuestMarkers(quests), [quests])
   const allMarkers   = useMemo(() => [...LORE_MARKERS, ...questMarkers], [questMarkers])
@@ -324,6 +319,7 @@ export default function MapScreen({ quests, onNavigate }) {
           <TileLayer url={TILE_URL} attribution={TILE_ATTR} maxZoom={19} />
           <ZoomTracker onZoom={setZoom} />
           <FlyController target={flyTarget} onDone={() => setFlyTarget(null)} />
+          <MapCentreTracker onCentre={setMapCentre} />
 
           {allMarkers.map(m => (
             <QMarker key={m.id} marker={m} zoom={zoom} onSelect={setSelected} />
@@ -331,6 +327,16 @@ export default function MapScreen({ quests, onNavigate }) {
 
           <PlayerMarker pos={playerPos} zoom={zoom} />
         </MapContainer>
+
+        {locationPermission === 'denied' && (
+          <button
+            className="map-here-btn"
+            onClick={() => onDiscoverNearby(mapCentre)}
+          >
+            <MapPin size={13} strokeWidth={2} />
+            I Am Here
+          </button>
+        )}
 
         {selected && (
           <InfoCard

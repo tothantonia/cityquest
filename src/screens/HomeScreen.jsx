@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { MapPin, ChevronRight, Star, HelpCircle, Clock } from 'lucide-react'
-import { PLAYER, DAILY_FACT, NPCS, CAT } from '../data/gameData'
+import { PLAYER, getDailyFact, NPCS, CAT } from '../data/gameData'
 import { isQuizAvailable, unlockCountdown } from '../utils/quizTime'
 import DevMenu from '../components/DevMenu'
 
@@ -56,13 +56,14 @@ function Header({ playerXp, onDevTap }) {
 
 // ─── Daily lore card ──────────────────────────────────────────
 function DailyLoreCard() {
+  const fact = getDailyFact()
   return (
     <div className="lore-card">
-      <span className="lore-card-tag">◆ {DAILY_FACT.tag}</span>
-      <blockquote className="lore-card-body">{DAILY_FACT.body}</blockquote>
+      <span className="lore-card-tag">◆ {fact.tag}</span>
+      <blockquote className="lore-card-body">{fact.body}</blockquote>
       <div className="lore-card-source">
         <div className="lore-source-line" />
-        <span className="lore-source-text">{DAILY_FACT.source}</span>
+        <span className="lore-source-text">{fact.source}</span>
         <div className="lore-source-line" />
       </div>
     </div>

@@ -3,17 +3,9 @@ import { Lock, Coins, ChevronRight } from 'lucide-react'
 import { PLAYER, CAT } from '../data/gameData'
 
 // ─── Static profile data ──────────────────────────────────────
-const COINS = 85
+const COINS = 0
 
-const COMPLETED_QUESTS = [
-  {
-    id: 'cq1',
-    title: 'Londinium Walking Route',
-    category: 'Exploration',
-    xp: 200,
-    date: 'Jun 4, 2026',
-  },
-]
+const COMPLETED_QUESTS = []
 
 const BADGES = [
   { id: 'first-steps',  name: 'First Steps'  },

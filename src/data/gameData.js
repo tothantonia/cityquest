@@ -3,18 +3,50 @@ import { Shield, Crown, Anchor, ScrollText, Feather, Compass, Utensils, Eye, Lan
 // ─── Player ──────────────────────────────────────────────────
 export const PLAYER = {
   name: 'Explorer',
-  level: 3,
-  xp: 340,
+  level: 1,
+  xp: 0,
   xpMax: 500,
   city: 'London',
-  distanceToday: '2.1',
+  distanceToday: '0.0',
 }
 
-// ─── Daily fact ───────────────────────────────────────────────
-export const DAILY_FACT = {
-  tag: 'London Lore',
-  body: "The word London comes from the Roman Londinium — but nobody is entirely sure what Londinium itself meant. Two thousand years of branding on a word nobody can translate.",
-  source: 'Roman Britain, 43 AD',
+// ─── Daily facts bank (30 facts, one per day) ─────────────────
+export const FACTS_BANK = [
+  { tag: 'London Lore', body: "The word London comes from the Roman Londinium — but nobody is entirely sure what Londinium itself meant. Two thousand years of branding on a word nobody can translate.", source: 'Roman Britain, 43 AD' },
+  { tag: 'London Lore', body: "London has 32 boroughs plus the City of London, which is technically not a borough at all. It has its own police force, its own Lord Mayor, and its own rules. It is a city within a city.", source: 'City of London' },
+  { tag: 'London Lore', body: "The Great Fire of London in 1666 destroyed 13,200 houses but officially only killed six people. Historians think this number is almost certainly wrong.", source: 'The Great Fire, September 1666' },
+  { tag: 'London Lore', body: "London has over 170 museums. Most of them are free. The British Museum alone gets over 6 million visitors a year.", source: 'Greater London' },
+  { tag: 'London Lore', body: "The Thames is a tidal river through London. Twice a day the tide comes in from the sea, reversing the flow. Romans, Vikings, and Saxons all used this to sail upstream.", source: 'The River Thames' },
+  { tag: 'London Lore', body: "The Tower of London has never actually been called the Tower of London in any official document. Its real name is Her Majesty's Royal Palace and Fortress of the Tower of London.", source: 'Tower of London' },
+  { tag: 'London Lore', body: "London has 13 UNESCO World Heritage Sites within or near the city — more than almost any other capital in the world.", source: 'UNESCO World Heritage' },
+  { tag: 'London Lore', body: "The London Underground opened in 1863, making it the oldest metro system in the world. The first passengers complained about the smoke from steam engines. This was considered normal.", source: 'Metropolitan Railway, 1863' },
+  { tag: 'London Lore', body: "Big Ben is not the name of the tower. It is the name of the bell inside. The tower is officially called the Elizabeth Tower. Nobody calls it that.", source: 'Palace of Westminster' },
+  { tag: 'London Lore', body: "London was almost completely destroyed twice — by the Great Fire in 1666 and by the Blitz in 1940–41. Both times it was rebuilt and grew larger.", source: '1666 & 1940–41' },
+  { tag: 'London Lore', body: "The Shard is the tallest building in London at 310 metres. It was designed by Renzo Piano and opened in 2012. It has 95 floors, 72 of which are habitable.", source: 'London Bridge Quarter, 2012' },
+  { tag: 'London Lore', body: "Approximately 300 languages are spoken in London, making it the most linguistically diverse city on earth.", source: 'Greater London' },
+  { tag: 'London Lore', body: "London has more green space per person than almost any other major world city. About 47% of Greater London is green space — parks, gardens, and woodlands.", source: 'Greater London' },
+  { tag: 'London Lore', body: "The London Eye opened in 2000 as a temporary structure for the millennium. It was supposed to be removed after 5 years. It is still there.", source: 'South Bank, 2000' },
+  { tag: 'London Lore', body: "Borough Market has existed on or near its current site since at least 1014 AD. It may be the oldest food market in London.", source: 'Borough Market, SE1' },
+  { tag: 'London Lore', body: "Samuel Pepys, who documented both the Great Plague and the Great Fire of London in extraordinary detail, buried his wine and his Parmesan cheese in his garden during the fire. The diaries survived. The cheese is unaccounted for.", source: 'Samuel Pepys, September 1666' },
+  { tag: 'London Lore', body: "The ravens at the Tower of London are official employees of the Crown. They receive a salary in food, have named ranks, and can be dismissed for unsatisfactory conduct. One was dismissed for eating other birds.", source: 'Tower of London' },
+  { tag: 'London Lore', body: "London Bridge is not Tower Bridge. This confusion causes significant distress to both tourists and Londoners on a daily basis.", source: 'City of London' },
+  { tag: 'London Lore', body: "The Palace of Westminster, where Parliament sits, has 1,100 rooms, 100 staircases, and 4.8 kilometres of corridors. Members of Parliament regularly get lost.", source: 'Palace of Westminster' },
+  { tag: 'London Lore', body: "Leadenhall Market, built in 1881, stands on the site of the Roman forum of Londinium — the administrative heart of Roman Britain. Romans had a market on this exact spot 2,000 years ago.", source: 'Leadenhall Market, EC3' },
+  { tag: 'London Lore', body: "The Monument to the Great Fire stands exactly 202 feet tall — precisely the distance from its base to the bakery on Pudding Lane where the fire started. Christopher Wren measured this deliberately.", source: 'Christopher Wren, 1677' },
+  { tag: 'London Lore', body: "London has hosted the Olympic Games three times — in 1908, 1948, and 2012. No other city has hosted them more than twice.", source: '1908, 1948 & 2012' },
+  { tag: 'London Lore', body: "The black cabs of London are required by law to be able to turn in a circle with a radius of 25 feet. This is why they are so short and wide. The rule dates back to the turning circle required at the Savoy Hotel.", source: 'London Taxi Regulations' },
+  { tag: 'London Lore', body: "Harrods was founded in 1849 as a single-room grocery shop. It now has 330 departments and employs around 5,000 people.", source: 'Knightsbridge, 1849' },
+  { tag: 'London Lore', body: "The Cenotaph in Whitehall, the national war memorial, was originally built in wood and plaster for the 1919 peace parade. It was so beloved that it was rebuilt in stone the following year.", source: 'Whitehall, 1919' },
+  { tag: 'London Lore', body: "London has over 600 parks. Hyde Park alone is 350 acres — larger than the entire principality of Monaco.", source: 'Greater London' },
+  { tag: 'London Lore', body: "The London Wall — built by the Romans around 200 AD — still shapes the street layout of the City of London today. Some sections still stand.", source: 'Roman London, c.200 AD' },
+  { tag: 'London Lore', body: "Crossrail, now called the Elizabeth Line, took 13 years and 18.9 billion pounds to build. Workers excavated 42 kilometres of new tunnels under London and discovered over 10,000 archaeological artefacts including Roman pottery, medieval skeletons, and a Victorian penny-farthing bicycle.", source: 'Elizabeth Line, 2022' },
+  { tag: 'London Lore', body: "The Tate Modern, one of the most visited art galleries in the world, is housed in a former power station on the South Bank. The original turbine hall is so large it has hosted installations including a giant crack in the floor and a massive orange sun.", source: 'Bankside Power Station, 2000' },
+  { tag: 'London Lore', body: "London has a river you cannot see. The Fleet River flows entirely underground from Hampstead Heath to the Thames at Blackfriars. You walk over it every day without knowing it.", source: 'The Hidden Rivers of London' },
+]
+
+export function getDailyFact() {
+  const dayIndex = Math.floor(Date.now() / 86400000)
+  return FACTS_BANK[dayIndex % FACTS_BANK.length]
 }
 
 // ─── NPCs ─────────────────────────────────────────────────────
@@ -130,7 +162,9 @@ export const INITIAL_QUESTS = [
   },
   {
     id: 2,
-    status: 'discovered',
+    status: 'locked',
+    hint: "London's oldest food market hides a challenge that requires three teams and one very good appetite.",
+    discoveryMethod: 'gps',
     title: "Borough Market: The Progressive Lunch",
     category: "Food",
     xp: 90,
@@ -150,7 +184,9 @@ export const INITIAL_QUESTS = [
   },
   {
     id: 3,
-    status: 'discovered',
+    status: 'locked',
+    hint: "Within one of the world's greatest museums lie objects that crossed oceans — and by some accounts, brought ruin to those who disturbed them.",
+    discoveryMethod: 'gps',
     title: "The Cursed Items Tour at the British Museum",
     category: "Mystery",
     xp: 180,
@@ -1100,7 +1136,8 @@ export const INITIAL_QUESTS = [
   // ── Challenge Quests ──────────────────────────────────────────
   {
     id: 46,
-    status: 'discovered',
+    status: 'locked',
+    hint: "A to Z in one day, no help. The oldest game in any city. Only London makes it interesting.",
     category: "Social",
     title: "The London Alphabet",
     xp: 200,
@@ -1111,7 +1148,8 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "A to Z, one day, no help. If you find X without cheating, I'll be genuinely impressed.",
     flavor: "The oldest game in any city: find something that starts with every letter of the alphabet in a single day. The rule is simple. The execution is harder than it sounds. Share the collection at dinner.",
-    discoveryMethod: 'start',
+    discoveryMethod: 'level',
+    requiredLevel: 2,
     tasks: [
       { id: 1, text: "Photograph something starting with each letter of the alphabet in one day", done: false },
       { id: 2, text: "Share the collection at dinner",                                             done: false },
@@ -1119,7 +1157,8 @@ export const INITIAL_QUESTS = [
   },
   {
     id: 47,
-    status: 'discovered',
+    status: 'locked',
+    hint: "Five views, one river, one day. The same water looks different from every height.",
     category: "Exploration",
     title: "The View Collector",
     xp: 180,
@@ -1130,7 +1169,8 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "The same river from five different heights. It is not the same river.",
     flavor: "London reveals itself differently from different heights. Find five Thames viewpoints in one day — from a bridge, a high building, a low riverbank, a boat, and a park — and notice how the city changes between them.",
-    discoveryMethod: 'start',
+    discoveryMethod: 'level',
+    requiredLevel: 2,
     tasks: [
       { id: 1, text: "Find a Thames viewpoint from a bridge",        done: false },
       { id: 2, text: "Find a Thames viewpoint from a high building", done: false },
