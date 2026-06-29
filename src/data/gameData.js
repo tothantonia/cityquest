@@ -395,6 +395,7 @@ export const INITIAL_QUESTS = [
     npc: "Samuel Pepys",
     npcQuote: "They call it one of the finest bridges in the world. I will show you why that is not quite the whole story.",
     flavor: "Tower Bridge is one of the most recognised landmarks on Earth. But most visitors only see the outside. Find the hidden mechanisms, the glass walkway, and the engineering secrets most people overlook.",
+    loreText: `Everyone photographs Tower Bridge. Almost nobody reads the information boards. Tower Bridge took eight years to build, from 1886 to 1894, requiring 432 construction workers -- five of whom died, which the Victorians considered acceptable. The two towers are not solid stone but steel frames clad in granite and Portland stone, deliberately designed to match the nearby Tower of London. The bascules -- the two lifting sections -- each weigh 1,000 tonnes and took just one minute to raise with the original steam hydraulics. The high-level walkways were closed in 1910 because they became notorious as a meeting place for pickpockets and prostitutes. They reopened in 1982, now with glass floors. In 1952 a London bus crossed as the bascules began to rise without warning -- the driver accelerated and jumped the gap. He received a commendation for bravery.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the engine rooms",                       done: false },
@@ -417,7 +418,7 @@ export const INITIAL_QUESTS = [
     npc: "Alfred the Great",
     npcQuote: "The ravens are older than the monarchy that keeps them. Do not dismiss the legend lightly.",
     flavor: "Legend holds that if the Ravens of the Tower ever leave, the Crown and the Kingdom will fall. Six ravens remain on official duty at all times. Find them.",
-    loreText: `The Tower of London has kept ravens since at least the reign of Charles II, who was told the legend that if the ravens ever leave, the Tower and the kingdom will fall. Instead of dismissing this as superstition, he made it official policy. It remains official policy today.\n\nThere must always be at least six ravens at the Tower. Their wings are clipped to prevent them leaving. They each have a name and a rank. They receive a daily ration of raw meat. They have been known to steal food from tourists, mimic human voices, and according to one Yeoman Warder, understand more than they let on.\n\nThe current Ravenmaster — the Yeoman Warder responsible for their care — is one of the most followed people on social media in the entire Historic Royal Palaces organisation.\n\nThe ravens have a better social media presence than most humans.`,
+    loreText: `The legend that the Tower will fall if its ravens ever leave was almost certainly invented in the Victorian era -- there is no reliable historical record of it before the 19th century. But when Charles II was told about it, instead of dismissing it as nonsense, he made it official royal policy. The ravens have names, ranks, and a dedicated Ravenmaster -- a Yeoman Warder whose specific duty is their care. They receive daily rations of raw meat and blood-soaked biscuits. In 2021 a raven named Merlina disappeared and the internet briefly panicked about the fall of the kingdom. She has not returned. The kingdom, thus far, stands. One raven named George was formally dismissed from service in the 1980s for attacking and eating a television aerial. The dismissal was officially recorded.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find all six ravens",                 done: false },
@@ -440,7 +441,7 @@ export const INITIAL_QUESTS = [
     npc: "Centurion Marcus",
     npcQuote: "That church was old when the Saxons rebuilt it. The Romans were there first. We usually are.",
     flavor: "Tucked beside the Tower, All Hallows is London's oldest church. Below the modern floor lie a Roman pavement and a Saxon arch — if you know to look for them.",
-    loreText: `All Hallows by the Tower is the oldest church in the City of London. There has been a church on this site since 675 AD. The Saxon arch in the undercroft is one of the oldest pieces of standing architecture in London. Under that is a Roman pavement from the second century.\n\nWilliam Penn, founder of Pennsylvania, was baptised here in 1644. John Quincy Adams, sixth President of the United States, was married here in 1797.\n\nSamuel Pepys climbed the tower on September 5th, 1666, looked out over the burning city, and decided the Great Fire would not spread further east. He was correct.\n\nThe church was severely damaged in the Blitz in 1940. During clearance of the rubble, workers found Roman and Saxon remains undisturbed for centuries. A bomb had done what no archaeologist had managed.\n\nIt sits in the shadow of the Tower of London and almost nobody goes in.`,
+    loreText: `All Hallows is the oldest church in the City of London, on this site since 675 AD. Under the current building is a Saxon arch -- one of the oldest pieces of standing architecture in London. Under that is a Roman pavement from the second century. William Penn, who founded Pennsylvania, was baptised here in 1644. John Quincy Adams, sixth President of the United States, was married here in 1797. Samuel Pepys climbed this tower on September 5th 1666 and concluded the Great Fire would not spread further east -- he was correct. The church was severely damaged in the Blitz in 1940, and during clearance of rubble, workers found Roman and Saxon remains undisturbed for centuries. A German bomb accomplished what centuries of archaeology had not. Entry is free. Almost nobody goes in.`,
     discoveryMethod: 'connected',
     unlockedBy: 10,
     tasks: [
@@ -463,7 +464,7 @@ export const INITIAL_QUESTS = [
     npc: "Samuel Pepys",
     npcQuote: "Many who shaped this city's history lost their heads on that square. Learn their names.",
     flavor: "The quiet gardens of Trinity Square were once the scaffold site for some of the Tower's most notable executions. The place is peaceful now. It was not always.",
-    loreText: `There is a quiet garden next to the Tower of London with a small raised area in its northwest corner. That raised area is approximately where the scaffold stood.\n\nTower Hill was London's primary public execution site for over 350 years — not for common criminals, but for the important ones. The political ones. The ones whose deaths were meant to send a message.\n\nOver 100 people were executed here between 1388 and 1747. Thomas More, who refused to endorse Henry VIII's divorce. Thomas Cromwell, who arranged one too many of Henry's marriages. Simon Fraser, Lord Lovat, the last person to be publicly beheaded in Britain in 1747 — the scaffold collapsed during his execution, killing several spectators. He reportedly laughed.\n\nThe scaffold is gone. The garden is pleasant. There is a memorial listing some of those who died here. It is worth reading.`,
+    loreText: `Tower Hill was London's primary public execution site for over 350 years -- not for ordinary criminals but for the significant ones. Over 100 people were publicly executed here between 1388 and 1747. Thomas More, who refused to endorse Henry VIII's divorce, was beheaded here in 1535 -- he joked with the executioner on the scaffold. Thomas Cromwell was executed here in 1540 by a notoriously incompetent headsman who required multiple blows. Simon Fraser, Lord Lovat, was the last person to be publicly beheaded in Britain here in 1747 -- the scaffold collapsed during his execution, killing several spectators. Fraser reportedly laughed. Public executions attracted crowds of tens of thousands. Food sellers worked the crowd. Pickpockets thrived. It was considered entertainment. The scaffold is gone. There is a small memorial. It is worth reading slowly.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the execution scaffold site marker",          done: false },
@@ -509,6 +510,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "Drake sailed around the entire world in that ship. Next time you complain about a long flight, remember that.",
     flavor: "A full-scale replica of Francis Drake's circumnavigation ship sits on dry dock beside the Thames. The original Golden Hinde completed a three-year voyage that changed the world.",
+    loreText: `The Golden Hinde is a full-size replica of the ship in which Francis Drake circumnavigated the globe between 1577 and 1580 -- the second circumnavigation in history and the first by an Englishman. Drake left Plymouth with five ships and 164 men. He returned with one ship, 56 men, and enough Spanish treasure to pay off the entire national debt of England. Queen Elizabeth I came aboard in Deptford in 1581 to knight him on deck. Drake was essentially a state-sponsored pirate -- he attacked Spanish ships with Elizabeth's unofficial blessing and she received a share of the profits. The ship is 36 metres long and 7 metres wide. The average crew height was about 5 foot 4. The headroom below deck is approximately 5 foot 2. Drake sailed this across two oceans for three years.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the ship",                             done: false },
@@ -530,6 +532,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "The city has always had its outcasts. This is where they ended up. Remember them.",
     flavor: "Cross Bones is a forgotten graveyard where the medieval outcast dead were buried — no ceremony, no names. Today the memorial gate is covered in ribbons, tokens, and dedications from strangers who came to pay their respects.",
+    loreText: `Cross Bones on Redcross Way was used from medieval times until 1853 as a burial ground for outcasts. The Winchester Geese -- women who worked in the legal brothels licensed by the Bishop of Winchester -- were denied Christian burial in consecrated ground and were buried here. Over the centuries it became a general paupers' graveyard for the poor, the unnamed, the unbaptised, the unwanted. When excavated in the 1990s, archaeologists found the remains of over 15,000 people in a space the size of a large back garden. Many were children. The gate is now covered in thousands of ribbons, flowers, keys, and tokens left by visitors. There is a monthly vigil. People leave things for the dead that nobody remembered. It is one of the most quietly powerful places in London. Almost nobody knows it exists.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the memorial gate",       done: false },
@@ -552,6 +555,7 @@ export const INITIAL_QUESTS = [
     npc: "Samuel Pepys",
     npcQuote: "The last galleried coaching inn in London, and they still serve ale. Some things improve with age.",
     flavor: "Tucked down a Southwark courtyard, the George Inn is the last surviving galleried coaching inn in London. Shakespeare drank here. Dickens wrote about it. Order something and sit in the gallery.",
+    loreText: `The George Inn on Borough High Street is the last surviving galleried coaching inn in London. The current building dates to 1676, rebuilt after fire. The galleried courtyard, where coaches would arrive and passengers would take rooms on upper floors, is intact. Charles Dickens mentioned it in Little Dorrit and drank here. Shakespeare possibly drank here or at an earlier inn on the same site -- the Globe Theatre was a ten-minute walk away. At its peak, Borough High Street had over a dozen galleried coaching inns. The George is the only one left. The others were demolished in the 19th century as railways replaced coaches. The National Trust now owns it, which is why it survived. It is still a working pub. Order something and sit in the galleried courtyard. You are sitting in history that has not been renovated into meaninglessness.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the inn tucked in the courtyard",              done: false },
@@ -575,6 +579,7 @@ export const INITIAL_QUESTS = [
     npc: "Alfred the Great",
     npcQuote: "Many of those buried within served me, or served my descendants. The Abbey holds more history than it knows what to do with.",
     flavor: "Every English monarch since William the Conqueror has been crowned here. The Abbey is also the resting place of kings, poets, scientists, and warriors — many in corners that tourists never reach.",
+    loreText: `Westminster Abbey was built to bury kings. Every English and British monarch except two has been crowned here since 1066, all using the same Coronation Chair -- the oldest piece of furniture still used for its original purpose in the world. Edward I had it built in 1300 to contain the Stone of Destiny, the Scottish coronation stone he had seized from Edinburgh. The Stone was returned to Scotland in 1996. The chair remains. The Abbey contains tombs of 17 monarchs, including Elizabeth I and Mary Queen of Scots -- buried in the same building as the cousin who had her executed. Poets Corner contains memorials to Chaucer, Shakespeare, Dickens and dozens more. Isaac Newton and Charles Darwin are buried here. The Unknown Warrior -- a single unidentified soldier from WWI, buried in soil from the battlefields of France -- lies near the west door. By tradition, no one walks over his grave.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find Poets' Corner",                    done: false },
@@ -597,6 +602,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "It's a lamppost. It's a police station. Only London would think that was a reasonable solution.",
     flavor: "In the corner of Trafalgar Square, disguised as an ornamental lamp post, hides what is claimed to be the smallest police station in the world. Find it before someone else points it out.",
+    loreText: `In the southeastern corner of Trafalgar Square there is a lamp post. It is not a normal lamp post. Inside it is a tiny room -- barely large enough for one person -- with a direct telephone line to Scotland Yard. It was designed in 1926 as a concealed observation post from which police could monitor protests. The lamp on top was lit by the light from a cell inside. It was decommissioned and used as a storage cupboard for cleaning equipment for much of its recent history. Trafalgar Square itself was designed by John Nash in the 1820s. Nelson's Column was added in 1843 -- Nelson died in 1805, so the column commemorating him took 38 years to build. The four lion sculptures were added in 1867 by Edwin Landseer, who had never seen a real lion when he accepted the commission and had to borrow a dead one from London Zoo.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the lamp post police station at Trafalgar Square", done: false },
@@ -618,6 +624,7 @@ export const INITIAL_QUESTS = [
     npc: "Samuel Pepys",
     npcQuote: "I was not there that morning, but I heard the silence when the crowd saw what had happened. London held its breath.",
     flavor: "Banqueting House is the only surviving remnant of Whitehall Palace. In 1649, King Charles I stepped through one of its windows onto the scaffold. The Rubens ceiling he looked up at is still there.",
+    loreText: `Banqueting House on Whitehall is the only surviving part of the Palace of Whitehall, which was once the largest palace in Europe. The rest burned down in 1698 when a Dutch laundrywoman left some linen too close to a fire. Banqueting House survived. It was built by Inigo Jones in 1622 and contains a magnificent painted ceiling by Peter Paul Rubens, commissioned by Charles I. On January 30th 1649, Charles I walked through this building for the last time, stepped through a first-floor window onto a scaffold outside, and was beheaded in front of a large crowd. He wore two shirts so he would not shiver in the cold and be thought afraid. The window he stepped through is still there. The Rubens ceiling, which he commissioned, is still there above it.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find Banqueting House",                                      done: false },
@@ -639,6 +646,7 @@ export const INITIAL_QUESTS = [
     npc: "Centurion Marcus",
     npcQuote: "That obelisk was ancient when Rome was young. We moved it, naturally.",
     flavor: "The obelisk on the Victoria Embankment is 3,500 years old — older than Rome, older than Greece as we know it. Buried beneath it is a time capsule sealed in 1878.",
+    loreText: `This obelisk is older than Rome. Carved around 1450 BC under Pharaoh Thutmose III, it is approximately 3,500 years old and has nothing to do with Cleopatra -- it was already 1,400 years old when she was born. The name is wrong and has always been wrong. The British brought it to London in 1878 in a specially built iron cylinder towed behind a steamship. In a storm in the Bay of Biscay, the cylinder broke free. Six sailors drowned attempting to rescue it. The cylinder drifted for four days before being recovered. A time capsule buried underneath it contains British coins, a portrait of Queen Victoria, a copy of the Bible, a railway timetable, and photographs of twelve of the most beautiful women in England. The two sphinxes flanking it have shrapnel damage from a 1917 German bombing raid. The damage has deliberately never been repaired, as a memorial.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the obelisk",                                             done: false },
@@ -663,6 +671,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "Seven streets, one pillar, no logic. London planning at its finest.",
     flavor: "Where seven streets converge, a Victorian sundial column marks the centre. Work out which direction each street runs, then find something worth visiting on each one.",
+    loreText: `Seven Dials was built in the 1690s as a fashionable residential development -- seven streets radiating from a central point, with a pillar bearing six sundials. The seventh dial is the streets themselves. By the 18th century it had become one of London's most notorious slums. The original pillar was taken down in 1773 after a rumour spread that treasure was buried underneath it -- a mob dug it up. There was no treasure. The pillar was later found being used as a sundial in a garden in Weybridge, Surrey. A replica was erected in 1989. Today Seven Dials is one of the nicer parts of Covent Garden. The transformation from notorious slum to desirable neighbourhood took approximately 200 years.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the central pillar",                         done: false },
@@ -685,6 +694,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "Someone spent years hiding ears across the city. I respect that level of commitment.",
     flavor: "Sculptor Tim Fishlock has hidden plaster ear casts on the walls and columns of Covent Garden's streets. Most people walk past them. You won't.",
+    loreText: `Covent Garden was London's principal fruit and vegetable market from the 17th century until 1974, when the market moved to Nine Elms. The covered market building was nearly demolished and replaced with an office block -- it was saved by a public campaign. In the 1990s, artist Tim Fishlock installed small sculptural ears at various points around Covent Garden -- attached to walls, tucked into corners, placed at ear height. There is no official record of exactly how many there are or where they all are. Finding them requires the same attention to the edges and corners of the city that Covent Garden has always rewarded. The Royal Opera House is here. If you stand in the right spot outside you can sometimes hear rehearsals through the walls.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find at least two hidden ear sculptures by Tim Fishlock", done: false },
@@ -705,6 +715,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "You will walk past a plain doorway, turn a corner, and find yourself in something completely different. That is the point.",
     flavor: "Through an inconspicuous passage in Covent Garden lies a courtyard painted in every colour, lined with independent shops, and entirely unknown to most tourists.",
+    loreText: `Neal's Yard was developed in the late 1970s by Nicholas Saunders, a counterculture entrepreneur who wanted a community of wholefood shops in what was then a run-down warehouse area. The buildings were painted in vivid colours -- blues, greens, yellows, pinks. Neal's Yard Remedies, founded here in 1981, is now an international brand sold in department stores worldwide. The original shop is still here. The rest of Covent Garden has been thoroughly gentrified into global retail chains. Neal's Yard has resisted, more or less, because the space is too small and too characterful to be profitably homogenised. It is about as far from the standard London tourist experience as you can get while being three minutes from one of the busiest tourist areas in the city.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the hidden courtyard",                            done: false },
@@ -726,6 +737,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "It's the only street in Britain where you drive on the right. The reason is exactly as absurd as you'd expect.",
     flavor: "The Savoy Court approach road is the only place in Britain where traffic drives on the right. The reason dates to the hotel's original taxi rank and the geometry of a turning circle.",
+    loreText: `There is one road in Britain where you are legally required to drive on the right. It is 80 metres long. It leads to the Savoy Hotel entrance. The rule dates to 1904 -- carriages needed to approach from the right for doors to open correctly onto the pavement. The Savoy opened in 1889, built by Richard D'Oyly Carte using profits from Gilbert and Sullivan operettas. It was the first hotel in Britain with electric lights throughout and en-suite bathrooms. It employed César Ritz as manager and Auguste Escoffier as chef -- the two men who between them invented the modern luxury hotel and the modern restaurant. Escoffier created Peach Melba here for opera singer Nellie Melba. Claude Monet stayed here and painted the Thames from his window.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the Savoy approach road",                          done: false },
@@ -749,6 +761,7 @@ export const INITIAL_QUESTS = [
     npc: "Bjorn the Trader",
     npcQuote: "Those pieces were carved by my people. Even in game, we looked ferocious.",
     flavor: "The Lewis Chessmen are twelfth-century Norse chess pieces discovered in Scotland, carved from walrus ivory. They are some of the most recognisable medieval objects in the world — find the berserker biting his shield.",
+    loreText: `The Lewis Chessmen were carved from walrus ivory in Norway around 1150-1200 AD and found in 1831 on the Isle of Lewis in Scotland -- buried in a sandbank in a small stone chamber for approximately 650 years. Nobody knows how they got there. There are 93 pieces in total, representing parts of four or five chess sets. The British Museum has 82, the National Museum of Scotland has 11. The rook figures are depicted as Norse berserkers biting their shields in battle frenzy. The queens look worried. One of the rook figures appeared in Harry Potter and the Philosopher's Stone as a wizard chess piece. Scotland has repeatedly requested the return of the London pieces. The British Museum has declined.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the chessmen",                                              done: false },
@@ -771,6 +784,7 @@ export const INITIAL_QUESTS = [
     npc: "Alfred the Great",
     npcQuote: "That ship carried a king to his next world. A warrior deserves such an ending.",
     flavor: "The Sutton Hoo helmet is one of the most significant Dark Ages finds in British history — buried with an Anglo-Saxon king in a ship under a Suffolk field, undisturbed for thirteen hundred years.",
+    loreText: `The Sutton Hoo helmet was found in 1939 in a ship burial mound in Suffolk. A 27-metre ship had been hauled inland and buried under a mound containing one of the greatest collections of Anglo-Saxon treasure ever discovered -- gold and garnet jewellery, silver bowls from Byzantium, weapons, and the helmet. The burial dates to around 625 AD. The helmet is iron covered with tinned bronze, decorated with interlaced animals. The face mask has eyebrows inlaid with silver wire and garnets, a moustache formed from a bronze dragon, and a nose-and-mouth guard that, viewed from a distance, forms a second flying dragon. When excavated it was in 500 fragments. It took years to reconstruct. When you stand in front of it, you are looking at something buried for 1,300 years.`,
     discoveryMethod: 'connected',
     unlockedBy: 12,
     tasks: [
@@ -793,6 +807,7 @@ export const INITIAL_QUESTS = [
     npc: "Centurion Marcus",
     npcQuote: "I have watched Rome and Greece argue about ownership for two thousand years. This debate is not new.",
     flavor: "The Parthenon sculptures — also called the Elgin Marbles — have been at the British Museum since 1817. Greece has been asking for them back ever since. Find both arguments, then vote.",
+    loreText: `The Parthenon sculptures were removed from the Parthenon in Athens between 1801 and 1812 by Thomas Bruce, 7th Earl of Elgin, the British Ambassador to the Ottoman Empire. He claimed to have obtained a permit. The permit's validity has been disputed ever since. The sculptures were designed to be seen together, in Athenian light, on the building for which they were made. Approximately half are in London. The other half are in Athens. Greece has requested their return since 1983. The British Museum says they are better preserved in London. Greece says they were illegally removed. Lord Byron, who watched the removal, called Elgin a vandal. Elgin spent more money removing the sculptures than he received from the British Museum. He went bankrupt. History has not been kind to him.`,
     discoveryMethod: 'connected',
     unlockedBy: 3,
     tasks: [
@@ -816,6 +831,7 @@ export const INITIAL_QUESTS = [
     npc: "Samuel Pepys",
     npcQuote: "Every street in Bloomsbury has a story attached to a wall. You just need to look at the right height.",
     flavor: "Bloomsbury was home to Virginia Woolf, Charles Dickens, T.S. Eliot, and half of English literary history. The blue plaques are everywhere if you know where to walk.",
+    loreText: `Bloomsbury in the early 20th century was where the Bloomsbury Group concentrated -- Virginia Woolf, E.M. Forster, Lytton Strachey, John Maynard Keynes, and others who met in these streets and changed British intellectual life. Charles Dickens lived at 48 Doughty Street from 1837 to 1839 -- now the Dickens Museum -- writing Oliver Twist and Nicholas Nickleby. He was 25 when he moved in and already famous. The blue plaques -- round blue ceramic discs on building facades -- mark where significant people lived. There are over 950 of them across London. They are one of the city's great gifts to the curious walker: the constant reminder that the ordinary buildings you pass were not always ordinary.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the blue plaque for Virginia Woolf",      done: false },
@@ -840,6 +856,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "Every continent on Earth, in a square mile. Don't go with a plan. Go with an appetite.",
     flavor: "Camden Market is one of the most diverse food markets in the world. Your challenge: find food from three different continents, identify the oldest stall, and find the strangest thing for sale.",
+    loreText: `Camden Market started as a small craft market by the canal in 1974. It burned down twice. It was repeatedly predicted to be killed by gentrification. It currently attracts around 100,000 visitors on a busy weekend. The food market is the honest heart of it -- Thai, Ethiopian, Peruvian, Japanese, Jamaican, Syrian, Venezuelan, Korean. Stalls in the Stables Market serve food from countries whose cuisines you may never have tried, at prices considerably more reasonable than the restaurants a mile south in the West End. Camden Market now receives around 28 million visitors a year -- more than the Tower of London. The Stables Market is built in and around the Victorian horse stables and catacombs that served the nearby canal and railway.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find food from three different continents",  done: false },
@@ -861,6 +878,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "Victorian horses lived underground here. Thousands of them. The tunnels still smell of something you can't quite name.",
     flavor: "Beneath Camden Market runs a network of Victorian tunnels built to stable horses from the railway and canal. The tunnels still have original ring hooks on the walls where the horses were tethered.",
+    loreText: `Under Camden Market there is another Camden Market that you cannot see. When the Regent's Canal was built in the 1820s and the railway in the 1840s, an extensive tunnel system was built for storage and movement of goods. Horses were stabled here by the thousand -- around 300 at any given time. They were lowered into the underground stables by crane because the ramps were too steep for them to walk. They spent their working lives largely underground. The tunnels still exist -- parts are now used as market stalls. You can walk through sections of the Victorian horse tunnel network while buying vintage clothing or street food. The original stable rings for tethering horses are still bolted to the walls in places.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the entrance to the Victorian horse tunnels",  done: false },
@@ -882,6 +900,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "Camden was her city. The statue is where the tourists stop. The real story is in the streets around it.",
     flavor: "Amy Winehouse grew up in, performed in, and lived in Camden. The bronze statue is just the start — trace her connection to the neighbourhood through the places she actually frequented.",
+    loreText: `Amy Winehouse was born in Enfield in 1983 and grew up in North London before ending up in Camden, where she stayed. Back to Black, released in 2006, was a record so perfectly constructed and emotionally specific that it seemed to belong to no particular era and every era simultaneously. She drank in the pubs around Camden. She shopped in the market. She died in her house in Camden on July 23rd 2011, aged 27. The pub she frequented, the Hawley Arms, still has photographs of her on the walls. The bronze statue in the Stables Market, unveiled in 2014, is almost always surrounded by flowers and notes left by fans from around the world. Back to Black won five Grammy Awards in 2008 -- at the time the most won by a British artist in a single night.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the bronze statue",                       done: false },
@@ -903,6 +922,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "London has had a functioning canal network since 1820. Almost nobody uses it for transport anymore. Now it's just one of the best walks in the city.",
     flavor: "Follow the Regent's Canal towpath through Camden, watch a narrowboat work the lock, find the floating coffee shop, and discover what's under the next bridge.",
+    loreText: `The Regent's Canal was built between 1812 and 1820 to carry goods across north London without fighting through crowded streets -- coal, timber, building materials, food. By the 20th century, road and rail had made it largely redundant. The last regular commercial traffic ended in the 1960s. Today the towpath is one of the best walks in London. The narrowboats that once carried coal now carry coffee shops and floating bookshops. There are 12 locks on the canal, each dropping the water level about 2 metres. The canal passes under Islington in a 960-metre tunnel with no towpath -- horses were led over the hill while the boatmen lay on the roof and walked the barge through using their feet against the tunnel walls.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Watch a narrowboat go through a lock",                 done: false },
@@ -926,6 +946,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "Someone mounted seven plaster noses on buildings across Soho in 1997 and nobody knows exactly why. I have my theories.",
     flavor: "In 1997, sculptor Rick Buckley quietly attached plaster nose casts to seven buildings across Soho as a comment on CCTV surveillance. Most are still there. Finding them requires looking in unexpected places.",
+    loreText: `In 1997, an artist named Rick Buckley went around Soho with a bag of plaster noses and attached them to buildings without permission. Seven noses appeared overnight on facades around Soho. Nobody noticed for years. Then someone noticed. Rick Buckley was eventually identified as responsible in 2011, after 14 years of speculation. His explanation for why he did it has never been entirely satisfying. The noses are still there. Their exact locations are not officially documented anywhere. Finding them requires walking around Soho looking at walls at unusual heights -- exactly the right way to see Soho. Soho has been London's bohemian district since the 18th century. Mozart lived here as a child. Karl Marx lived here as an adult.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find at least four of the seven plaster noses on buildings around Soho", done: false },
@@ -947,6 +968,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "It was the centre of the world for about four years in the 1960s. Look carefully and you can still see the edges of that.",
     flavor: "Carnaby Street was the beating heart of Swinging London. Most of the boutiques are gone, but three reminders of that era survive if you look for them — along with Liberty's extraordinary building just around the corner.",
+    loreText: `In the early 1960s Carnaby Street was a backstreet in Soho that nobody much visited. By 1966 Time magazine had declared London the swinging city and Carnaby Street was its symbol. The boutiques here sold the clothes that defined the decade -- The Rolling Stones, The Beatles, The Who all bought stage clothes here. The fashion moved on. By the 1970s Carnaby Street had become a tourist trap selling mass-produced versions of what had once been genuinely innovative. It has reinvented itself several times since. Liberty of London is around the corner, in a building that looks like a Tudor manor house and has been selling extraordinary fabric and design objects since 1875. The current mock-Tudor building was built in 1924 using timber from two decommissioned Royal Navy ships.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find three remnants of 1960s Swinging London",  done: false },
@@ -968,6 +990,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "Most people who've lived in London their whole life have never found it. Now you will.",
     flavor: "Hidden inside Mayfair — one of the most expensive postcodes in the world — is a tiny village of cobbled streets, independent restaurants, and almost no tourists. Find out how it got its name.",
+    loreText: `Shepherd Market was developed in the 1730s by Edward Shepherd on the site of the old May Fair -- the two-week annual fair that gave Mayfair its name and that was eventually suppressed in 1764 because it had become too rowdy, too criminal, and too embarrassing for the increasingly fashionable neighbourhood. The market is a small network of narrow streets and passages, with restaurants, pubs, and shops at a human scale that the surrounding streets entirely lack. It has managed to remain relatively independent and characterful despite being surrounded by some of the most valuable real estate in Britain. Mayfair contains more Monopoly board locations than any other area of London -- Park Lane, Mayfair, Bond Street, Oxford Street.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the village square",                            done: false },
@@ -989,6 +1012,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "A man spent twenty years building satirical coin-operated machines by hand. The results are deeply strange. You should go.",
     flavor: "Tim Hunkin's Novelty Automation arcade on Princeton Street contains hand-built, coin-operated machines that comment on modern life with dark humour. There's nothing else like it in London.",
+    loreText: `On Princeton Street in Holborn, Novelty Automation is an arcade containing hand-built, one-of-a-kind, coin-operated automata created by artist Tim Hunkin, who has been building them since the 1970s. The machines include: a simulation of anxiety, a machine simulating the experience of being a financial trader (you make split-second decisions and immediately lose all your money), and a machine called Auto Phrenologist that examines your skull and tells you your character. The arcade charges 50p per machine. It is one of the most genuinely original creative experiences in London, known primarily to locals. Hunkin also built the elaborate mechanical clock on the South Bank outside the Oxo Tower.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the arcade on Princeton Street",      done: false },
@@ -1012,6 +1036,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "A thousand LED lights in a tunnel between two stations. It sounds like nothing. It looks like something.",
     flavor: "The LED light installation connecting King's Cross and St Pancras International is so well-integrated into the commuter flow that most passengers don't register it as art. That's part of what makes it interesting.",
+    loreText: `The pedestrian tunnel connecting King's Cross and St Pancras was a perfectly ordinary tunnel -- useful, fluorescent-lit, entirely unremarkable -- until 2012, when it was fitted with a programmable LED light installation covering the entire ceiling and walls, constantly shifting through colours. The tunnel is now one of the most photographed spots in London that most guidebooks never mention. The colours change -- sometimes slowly, sometimes quickly, sometimes the whole tunnel is one colour, sometimes it moves in waves. It takes about 90 seconds to walk from one end to the other. Those 90 seconds are consistently surprising. St Pancras International is the London terminal for the Eurostar to Paris, Brussels, and Amsterdam. You can be in Paris in 2 hours and 15 minutes.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the LED tunnel between King's Cross and St Pancras", done: false },
@@ -1033,6 +1058,7 @@ export const INITIAL_QUESTS = [
     npc: "Centurion Marcus",
     npcQuote: "The children's story is charming. The actual history of this site is considerably darker.",
     flavor: "Yes, the Platform 9¾ installation is here. But King's Cross has deeper history — the area is associated with Boudica's last battle against Rome, and the real story is more dramatic than any fiction.",
+    loreText: `Everyone comes to King's Cross for the trolley in the wall. Few people know that Boudica, Queen of the Iceni, is traditionally said to be buried somewhere under King's Cross -- almost certainly not true, the legend dates to the 19th century, but it reflects the area's long history as the edge of the city where things happened that could not happen inside the walls. The real Platform 9 runs normal trains with no trolley in the wall. The Harry Potter film production used the external facade of St Pancras for some shots and the interior of King's Cross for others, which is why the geography of the fictional platform is confusing. Coal Drops Yard, adjacent to the canal, was where coal brought by canal from the north was stored. It is now a shopping and restaurant destination -- the Victorian architecture has been preserved and dramatically extended.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find Platform 9¾",                                      done: false },
@@ -1054,6 +1080,7 @@ export const INITIAL_QUESTS = [
     npc: "Samuel Pepys",
     npcQuote: "When they built that station, it was the largest structure of its kind on earth. That fact tends to get lost behind the fairy-tale facade.",
     flavor: "St Pancras is London's most dramatic piece of Victorian architecture — a Gothic hotel attached to the largest single-span train shed ever built. Most people photograph the facade and miss everything behind it.",
+    loreText: `St Pancras station is the most extreme example of Victorian ambition in London. The train shed, completed in 1868, was the largest single-span iron structure in the world at the time -- 74 metres wide. Engineers did not fully understand why it worked when they built it; the mathematics were only properly analysed decades later. It worked anyway. The hotel facade was designed by George Gilbert Scott in Gothic Revival style -- originally designed as the Foreign and Commonwealth Office, rejected as too gothic, and reused here. The station was nearly demolished in the 1960s; John Betjeman, the Poet Laureate, campaigned vigorously for its preservation. There is a statue of him inside. The undercroft was originally used to store Burton's Pale Ale -- the columns are spaced to exactly accommodate beer barrels stacked on their sides.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the Barlow train shed span (widest in the world when built)", done: false },
@@ -1077,6 +1104,7 @@ export const INITIAL_QUESTS = [
     npc: "Centurion Marcus",
     npcQuote: "The Thames has swallowed two thousand years of objects. At low tide, some of them come back.",
     flavor: "At low tide, the Thames foreshore becomes an archaeological site. Mudlarkers have found Roman pottery, Tudor pipes, and Georgian coins in the same stretch of riverbank. You need a permit to keep anything — but not to look.",
+    loreText: `The Thames has been London's highway, its sewer, its food source, and its dumping ground for two thousand years. Everything that has ever passed through London has at some point ended up in the Thames. Mudlarking -- searching the foreshore for historical objects -- has been practiced since the 18th century when the very poor searched the river mud for pieces of coal and copper nails. Today the publicly accessible Thames beaches can be explored freely at low tide. A curved piece of grey clay with a small hole is almost certainly a Tudor or Stuart pipe stem -- London's equivalent of a cigarette butt, discarded in extraordinary quantities for three centuries. The foreshore is only accessible for about two hours either side of low tide. The tide comes in faster than you expect.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find a public Thames beach at low tide", done: false },
@@ -1099,6 +1127,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "They opened it, everyone walked on it, it wobbled so badly they closed it two days later. Two years and five million pounds to fix. Only London.",
     flavor: "The Millennium Bridge famously wobbled when it opened in 2000, due to a resonance effect nobody had predicted. The engineers added 91 dampers to fix it. Find three of them.",
+    loreText: `The Millennium Bridge opened on June 10th 2000. It closed on June 12th 2000. The bridge was designed by Norman Foster, Anthony Caro, and Arup -- three of the most prestigious names in their fields. It cost GBP 18.2 million and took four years to build. It wobbled because of synchronous lateral excitation -- as pedestrians walked across, the slight sideways sway caused people unconsciously to adjust their gait to match it, which amplified the sway, which adjusted more gaits. The bridge was swaying up to 70mm sideways. It was closed for two years and fitted with 37 fluid-viscous dampers and 52 tuned mass dampers. The problem had never occurred before because no bridge had previously attracted that density of pedestrian traffic on its opening day.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the bridge",                                         done: false },
@@ -1120,6 +1149,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "It's a legal graffiti tunnel under Waterloo. It changes every week. You can paint it yourself if you want.",
     flavor: "Beneath Waterloo station, a 300-metre tunnel has been legal graffiti space since Banksy's Cans Festival in 2008. The work is temporary by design — by next week it will look different.",
+    loreText: `In 2008, Banksy organised a street art festival in the tunnel under Waterloo station on Leake Street. He invited artists from around the world. When it was over, the walls were covered in extraordinary work. Then someone else painted over it. The tunnel had always been used for unofficial graffiti, and Banksy's festival had effectively announced to every street artist in the world that here was a legitimate space. The walls are repainted constantly -- the lifespan of a piece might be days, hours, or minutes. What was there last week is gone. What is there today will be gone next week. This is either the point or the tragedy of street art, depending on your perspective. It is probably both.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find the legal graffiti tunnel under Waterloo", done: false },
@@ -1141,6 +1171,7 @@ export const INITIAL_QUESTS = [
     npc: "Samuel Pepys",
     npcQuote: "I drank in that pub in 1663. It was already old then.",
     flavor: "The Prospect of Whitby has stood on this stretch of the Thames since 1520, making it the oldest surviving riverside pub in London. Turner painted the view from here. Dickens drank here. A hangman's noose still swings over the water.",
+    loreText: `The Prospect of Whitby on Wapping Wall opened in 1520 -- 146 years before the Great Fire of London. It was originally called the Devil's Tavern. The clientele in the early years included smugglers, pirates, and dock workers who preferred not to be distinguishable from smugglers and pirates. Judge Jeffreys, the Hanging Judge, allegedly watched executions from a window here -- the Execution Dock at Wapping was where pirates were hanged, their bodies left chained below the waterline for three tides. Captain Kidd was executed there in 1701. Turner painted the Thames from this spot. Dickens drank here. The pewter bar top has been there since the 17th century. The views from the riverside terrace are excellent.`,
     discoveryMethod: 'gps',
     tasks: [
       { id: 1, text: "Find London's oldest riverside pub (1520)", done: false },
@@ -1164,6 +1195,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "A to Z, one day, no help. If you find X without cheating, I'll be genuinely impressed.",
     flavor: "The oldest game in any city: find something that starts with every letter of the alphabet in a single day. The rule is simple. The execution is harder than it sounds. Share the collection at dinner.",
+    loreText: `London has been one of the most diverse cities in the world for longer than the concept of diversity existed as a conscious value -- diverse because it was a port, because it was a capital, because it was a place where trade happened and where the displaced arrived looking for work and the possibility of reinvention. The Romans brought their engineering. The Saxons brought their language. The Vikings brought their law. The Normans brought their French. The Huguenots brought their silk weaving. Every wave of migration brought skills and stories and words and recipes that became part of the city. The alphabet challenge is simple in description and difficult in practice: photograph something starting with each letter. The city will provide all of them. The question is whether you are paying enough attention to find them.`,
     discoveryMethod: 'level',
     requiredLevel: 2,
     tasks: [
@@ -1185,6 +1217,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "The same river from five different heights. It is not the same river.",
     flavor: "London reveals itself differently from different heights. Find five Thames viewpoints in one day — from a bridge, a high building, a low riverbank, a boat, and a park — and notice how the city changes between them.",
+    loreText: `The Thames has shaped everything about London. The Romans chose this spot because the river could be bridged here. The medieval city grew along its banks. The docks that made London the trading capital of the world stretched for miles along its eastern reaches. The river was London's highway, its sewer, its food source, its defensive moat, and its identity. Five views of the same river reveal five different cities: a bridge where the water passes beneath you, a high place where the scale becomes visible, a low riverbank where the foreshore is right there, a boat where the city moves past at water level, a park where green space and skyline negotiate. They are all London.`,
     discoveryMethod: 'level',
     requiredLevel: 2,
     tasks: [
@@ -1209,6 +1242,7 @@ export const INITIAL_QUESTS = [
     npc: "Centurion Marcus",
     npcQuote: "Two thousand years in one photograph. This city can do that.",
     flavor: "Find the oldest building you can enter and the newest landmark on the skyline. Photograph both, calculate the gap between them, and consider what stood between.",
+    loreText: `London has always been a city that builds on itself -- the new on top of the old, the old surviving under the new, everything coexisting in layers that occasionally reveal themselves. A Roman mosaic under a Poundland. A medieval wall behind a Pret a Manger. A Victorian sewer under a glass tower. The oldest accessible structure in London is probably All Hallows by the Tower, with its Saxon arch from the 7th century sitting on Roman foundations from the 2nd. The gap between the oldest and newest things visible in a single afternoon in central London might be 1,800 years. Both were built by people who believed what they were building would last. One of them was right. Both are visible on the same afternoon, in the same square mile.`,
     discoveryMethod: 'level',
     requiredLevel: 2,
     tasks: [
@@ -1232,6 +1266,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "The City of London is louder outside than in. Find the quiet places.",
     flavor: "The Square Mile is honeycombed with hidden courtyards, alleyways, and passages invisible from the main streets. Find five of them — the list gives you four, the fifth is yours to discover.",
+    loreText: `The City of London looks from the outside like a solid wall of glass towers. What the outside does not reveal is the network of passages, alleys, courts, and yards threading through it at ground level. The medieval city was built organically over centuries along routes established by feet and carts and the gradual accumulation of habit. The modern buildings rose around these patterns, not over them. The Blitz destroyed buildings. The patterns survived. Postman's Park, behind the General Post Office near St Paul's, contains the Watts Memorial -- a covered cloister of ceramic tablets commemorating ordinary people who died saving others. The alleys of the City preserve the memory of medieval trades in their names: Bread Street, Milk Street, Wood Street, Ironmonger Lane, Poultry.`,
     discoveryMethod: 'level',
     requiredLevel: 3,
     tasks: [
@@ -1256,6 +1291,7 @@ export const INITIAL_QUESTS = [
     npc: "Sparrow",
     npcQuote: "One day, properly done. No panic, no queue, no chain restaurants. This is the mission.",
     flavor: "The definitive London day: breakfast at a market, a free museum, one hidden gem, a walk across the Thames, and a dinner that no guidebook would mention. Simple in principle. Harder than it looks.",
+    loreText: `London is too large to see. It has been too large to see since the Romans built it. The appropriate response to a city this size, this old, this layered, is not to try to see all of it. The appropriate response is to see some of it well. A market breakfast -- the city waking up. A free museum -- because London's museums are extraordinary and free, which is not to be taken for granted. A hidden gem -- something that does not appear on the first page of any search result. A Thames bridge -- because the river is the city. A dinner nobody at the table could have predicted. This is not about covering ground. It is about being present in one of the oldest, strangest, most contradictory, most extraordinary cities in the world, and paying it the attention it deserves. The city will do the rest.`,
     discoveryMethod: 'quests',
     requiredQuests: 10,
     tasks: [
