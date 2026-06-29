@@ -291,11 +291,12 @@ function LocationList({ markers, playerPos, onSelect }) {
 }
 
 // ─── Screen ───────────────────────────────────────────────────
-export default function MapScreen({ quests, onNavigate, playerPos, locationPermission, onDiscoverNearby }) {
+export default function MapScreen({ quests, onNavigate, playerPos, locationPermission, onDiscoverNearby, defaultCenter }) {
+  const MAP_CENTER = defaultCenter || CENTER
   const [selected,   setSelected]   = useState(null)
   const [zoom,       setZoom]       = useState(ZOOM)
   const [flyTarget,  setFlyTarget]  = useState(null)
-  const [mapCentre,  setMapCentre]  = useState(CENTER)
+  const [mapCentre,  setMapCentre]  = useState(MAP_CENTER)
 
   const questMarkers = useMemo(() => buildQuestMarkers(quests), [quests])
   const allMarkers   = useMemo(() => [...LORE_MARKERS, ...questMarkers], [questMarkers])
@@ -310,7 +311,7 @@ export default function MapScreen({ quests, onNavigate, playerPos, locationPermi
 
       <div className="map-map-wrap">
         <MapContainer
-          center={CENTER}
+          center={MAP_CENTER}
           zoom={ZOOM}
           style={{ height: '100%', width: '100%' }}
           zoomControl={false}

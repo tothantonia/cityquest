@@ -3214,3 +3214,27 @@ body {
   background: var(--bg-elevated);
   border-color: var(--gold);
 }
+
+/* ─── City selector (ProfileScreen) ──────────────────────────── */
+.profile-city-selector { margin: 14px 0 4px; }
+.profile-city-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  margin-bottom: 7px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.profile-city-card--active {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.06);
+}
+.profile-city-flag { font-size: 22px; line-height: 1; }
+.profile-city-info { flex: 1; display: flex; flex-direction: column; gap: 1px; }
+.profile-city-name { font-size: 14px; font-weight: 600; color: var(--text-1); font-family: 'Cinzel', serif; }
+.profile-city-country { font-size: 10px; color: var(--text-4); letter-spacing: 0.5px; }
+.profile-city-check { font-size: 14px; color: var(--gold); font-weight: 700; }

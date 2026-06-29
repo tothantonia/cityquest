@@ -1,11 +1,11 @@
 import { useRef, useState } from 'react'
 import { MapPin, ChevronRight, Star, HelpCircle, Clock } from 'lucide-react'
-import { PLAYER, getDailyFact, NPCS, CAT, xpToLevel, levelXpBounds } from '../data/gameData'
+import { PLAYER, getDailyFact, NPCS, CAT, xpToLevel, levelXpBounds, CITIES } from '../data/gameData'
 import { isQuizAvailable, unlockCountdown } from '../utils/quizTime'
 import DevMenu from '../components/DevMenu'
 
 // ─── Header ──────────────────────────────────────────────────
-function Header({ playerXp, onDevTap }) {
+function Header({ playerXp, onDevTap, selectedCity }) {
   const tapCount = useRef(0)
   const tapTimer = useRef(null)
 
@@ -32,7 +32,7 @@ function Header({ playerXp, onDevTap }) {
             <span className="home-title-text">CITYQUEST</span>
             <span className="home-city-tag">
               <MapPin size={8} strokeWidth={2.5} />
-              {PLAYER.city}
+              {CITIES.find(c => c.id === selectedCity)?.name || PLAYER.city}
             </span>
           </div>
         </div>
@@ -243,7 +243,7 @@ function SectionDivider({ label }) {
 }
 
 // ─── Screen ───────────────────────────────────────────────────
-export default function HomeScreen({ quests, onNavigate, onNpcTap, playerXp, todayQuizDone, devQuizUnlocked, onDevUnlockQuiz, onDevResetAll, onDevDiscoverAll, onDevAdd100Xp }) {
+export default function HomeScreen({ quests, onNavigate, onNpcTap, playerXp, todayQuizDone, devQuizUnlocked, onDevUnlockQuiz, onDevResetAll, onDevDiscoverAll, onDevAdd100Xp, selectedCity }) {
   const [devMenuOpen, setDevMenuOpen] = useState(false)
   const discovered = quests.filter(q => q.status === 'discovered')
   const inProgress = discovered.filter(q => q.tasks.some(t => t.done))
@@ -251,7 +251,7 @@ export default function HomeScreen({ quests, onNavigate, onNpcTap, playerXp, tod
 
   return (
     <div className="home-screen">
-      <Header playerXp={playerXp} onDevTap={() => setDevMenuOpen(true)} />
+      <Header playerXp={playerXp} onDevTap={() => setDevMenuOpen(true)} selectedCity={selectedCity} />
       <div className="home-content">
         <DailyLoreCard />
         <QuizCard onNavigate={onNavigate} todayQuizDone={todayQuizDone} devQuizUnlocked={devQuizUnlocked} />

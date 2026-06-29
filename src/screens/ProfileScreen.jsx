@@ -156,8 +156,33 @@ function SubscriptionCard() {
   )
 }
 
+// ─── City selector ────────────────────────────────────────────
+function CitySelector({ cities, selectedCity, onSwitchCity }) {
+  return (
+    <div className="profile-city-selector">
+      <p className="profile-section-label">City</p>
+      {cities.map(city => (
+        <div
+          key={city.id}
+          className={`profile-city-card${selectedCity === city.id ? ' profile-city-card--active' : ''}`}
+          onClick={() => onSwitchCity(city.id)}
+        >
+          <span className="profile-city-flag">{city.flag}</span>
+          <div className="profile-city-info">
+            <span className="profile-city-name">{city.name}</span>
+            <span className="profile-city-country">{city.country}</span>
+          </div>
+          {selectedCity === city.id && (
+            <span className="profile-city-check">✓</span>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
+
 // ─── Screen ───────────────────────────────────────────────────
-export default function ProfileScreen({ playerXp }) {
+export default function ProfileScreen({ playerXp, cities, selectedCity, onSwitchCity }) {
   const [activeTab, setActiveTab] = useState('Stats')
 
   return (
@@ -171,6 +196,10 @@ export default function ProfileScreen({ playerXp }) {
 
       <div className="profile-content">
         <AvatarSection />
+
+        {cities && (
+          <CitySelector cities={cities} selectedCity={selectedCity} onSwitchCity={onSwitchCity} />
+        )}
 
         <div className="profile-cards-row">
           <LevelCard playerXp={playerXp} />

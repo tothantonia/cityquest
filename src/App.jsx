@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { INITIAL_QUESTS, PLAYER, NPCS, xpToLevel } from './data/gameData'
+import { INITIAL_QUESTS, PLAYER, NPCS, xpToLevel, CITIES, getInitialQuestsForCity } from './data/gameData'
 import BottomNav from './components/BottomNav'
 import NpcScene from './components/NpcScene'
 import HomeScreen from './screens/HomeScreen'
@@ -12,6 +12,16 @@ import QuizTabScreen from './screens/QuizTabScreen'
 import './index.css'
 
 const CENTER = [51.5130, -0.1000]
+
+const CITY_CENTERS = {
+  london: [51.5130, -0.1000],
+  thun:   [46.7574, 7.6285],
+}
+
+function getInitCity() {
+  if (localStorage.getItem('cq_version') !== '2') return 'london'
+  return localStorage.getItem('cq_city') || 'london'
+}
 
 function haversineKm(lat1, lng1, lat2, lng2) {
   const R    = 6371
@@ -64,7 +74,8 @@ function DiscoveryBanner({ quest, npc, onDismiss }) {
 // ─── App ──────────────────────────────────────────────────────
 export default function App() {
   const [active,            setActive]            = useState('home')
-  const [quests,            setQuests]            = useState(INITIAL_QUESTS)
+  const [selectedCity,      setSelectedCity]      = useState(getInitCity)
+  const [quests,            setQuests]            = useState(() => getInitialQuestsForCity(getInitCity()))
   const [metNpcs,           setMetNpcs]           = useState(new Set())
   const [npcScene,          setNpcScene]          = useState(null)
   const [playerXp,          setPlayerXp]          = useState(() => {
@@ -74,11 +85,11 @@ export default function App() {
   const [quizHistory,       setQuizHistory]       = useState([])
   const [todayQuizDone,     setTodayQuizDone]     = useState(false)
   const [devQuizUnlocked,   setDevQuizUnlocked]   = useState(false)
-  const [playerPos,         setPlayerPos]         = useState(CENTER)
+  const [playerPos,         setPlayerPos]         = useState(() => CITY_CENTERS[selectedCity] || CENTER)
   const [locationPermission, setLocationPermission] = useState('unknown')
   const [discoveryQueue,    setDiscoveryQueue]    = useState([])
 
-  const questsRef     = useRef(INITIAL_QUESTS)
+  const questsRef     = useRef(quests)
   const discoveredIds = useRef(new Set())
 
   useEffect(() => { questsRef.current = quests }, [quests])
@@ -92,10 +103,14 @@ export default function App() {
     }
   }, [])
 
-  // Persist XP to localStorage
+  // Persist XP and city to localStorage
   useEffect(() => {
     localStorage.setItem('cq_xp', String(playerXp))
   }, [playerXp])
+
+  useEffect(() => {
+    localStorage.setItem('cq_city', selectedCity)
+  }, [selectedCity])
 
   // GPS watch (position + permission)
   useEffect(() => {
@@ -145,6 +160,16 @@ export default function App() {
     const t = setTimeout(() => setDiscoveryQueue(prev => prev.slice(1)), 5000)
     return () => clearTimeout(t)
   }, [discoveryQueue[0]?.id])
+
+  function switchCity(cityId) {
+    setSelectedCity(cityId)
+    const newQuests = getInitialQuestsForCity(cityId)
+    setQuests(newQuests)
+    questsRef.current = newQuests
+    discoveredIds.current = new Set()
+    setDiscoveryQueue([])
+    setActive('home')
+  }
 
   function discoverAllGpsQuests() {
     const toDiscover = questsRef.current.filter(q =>
@@ -206,7 +231,7 @@ export default function App() {
     onDevUnlockQuiz:    () => setDevQuizUnlocked(true),
     onDevResetAll:      () => {
       setPlayerXp(0)
-      setQuests(INITIAL_QUESTS)
+      setQuests(getInitialQuestsForCity(selectedCity))
       setTodayQuizDone(false)
       setDevQuizUnlocked(false)
       setQuizHistory([])
@@ -217,6 +242,10 @@ export default function App() {
     playerPos,
     locationPermission,
     onDiscoverNearby:    checkNearby,
+    selectedCity,
+    cities:              CITIES,
+    onSwitchCity:        switchCity,
+    defaultCenter:       CITY_CENTERS[selectedCity] || CENTER,
   }
 
   const SCREENS = {
