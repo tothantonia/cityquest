@@ -8,8 +8,8 @@ import { CAT } from '../data/gameData'
 // ─── Constants ────────────────────────────────────────────────
 const CENTER   = [51.5130, -0.1000]
 const ZOOM     = 13
-const TILE_URL = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
-const TILE_ATTR = '&copy; <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a>'
+const TILE_URL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+const TILE_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>'
 
 const CAT_COLORS = {
   Exploration: '#4a7fc9',

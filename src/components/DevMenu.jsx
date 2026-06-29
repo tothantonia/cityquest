@@ -8,7 +8,7 @@ const overlay = {
   borderRadius: 8,
   padding: '12px 14px',
   zIndex: 9999,
-  minWidth: 210,
+  minWidth: 220,
   boxShadow: '0 4px 24px rgba(0,0,0,0.7)',
 }
 
@@ -27,7 +27,14 @@ const btn = {
   fontFamily: 'system-ui, -apple-system, sans-serif',
 }
 
-export default function DevMenu({ onUnlockQuiz, onResetQuiz, onClose }) {
+const dangerBtn = {
+  ...btn,
+  background: 'rgba(200,50,50,0.1)',
+  border: '1px solid rgba(200,50,50,0.35)',
+  color: '#c44',
+}
+
+export default function DevMenu({ onUnlockQuiz, onResetAll, onDiscoverAll, onAdd100Xp, onClose }) {
   return (
     <div style={overlay}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
@@ -43,7 +50,9 @@ export default function DevMenu({ onUnlockQuiz, onResetQuiz, onClose }) {
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
         <button style={btn} onClick={onUnlockQuiz}>Unlock quiz now</button>
-        <button style={btn} onClick={onResetQuiz}>Reset quiz</button>
+        <button style={btn} onClick={onDiscoverAll}>Discover all nearby quests</button>
+        <button style={btn} onClick={onAdd100Xp}>Add 100 XP</button>
+        <button style={dangerBtn} onClick={onResetAll}>Reset all progress</button>
       </div>
     </div>
   )

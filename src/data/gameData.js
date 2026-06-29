@@ -3,11 +3,27 @@ import { Shield, Crown, Anchor, ScrollText, Feather, Compass, Utensils, Eye, Lan
 // ─── Player ──────────────────────────────────────────────────
 export const PLAYER = {
   name: 'Explorer',
-  level: 1,
-  xp: 0,
-  xpMax: 500,
   city: 'London',
   distanceToday: '0.0',
+}
+
+// ─── XP / Level ───────────────────────────────────────────────
+const XP_LEVELS = [0, 200, 500, 900, 1400, 2000]
+
+export function xpToLevel(xp) {
+  let lvl = 1
+  for (let i = 1; i < XP_LEVELS.length; i++) {
+    if (xp >= XP_LEVELS[i]) lvl = i + 1
+    else break
+  }
+  return lvl
+}
+
+export function levelXpBounds(level) {
+  return {
+    min: XP_LEVELS[level - 1] ?? 0,
+    max: XP_LEVELS[level]     ?? null,  // null = max level, no upper bound
+  }
 }
 
 // ─── Daily facts bank (30 facts, one per day) ─────────────────

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
-import { INITIAL_QUESTS, PLAYER, NPCS } from './data/gameData'
+import { INITIAL_QUESTS, PLAYER, NPCS, xpToLevel } from './data/gameData'
 import BottomNav from './components/BottomNav'
 import NpcScene from './components/NpcScene'
 import HomeScreen from './screens/HomeScreen'
@@ -67,7 +67,10 @@ export default function App() {
   const [quests,            setQuests]            = useState(INITIAL_QUESTS)
   const [metNpcs,           setMetNpcs]           = useState(new Set())
   const [npcScene,          setNpcScene]          = useState(null)
-  const [playerXp,          setPlayerXp]          = useState(PLAYER.xp)
+  const [playerXp,          setPlayerXp]          = useState(() => {
+    if (localStorage.getItem('cq_version') !== '2') return 0
+    return Math.max(0, parseInt(localStorage.getItem('cq_xp') || '0') || 0)
+  })
   const [quizHistory,       setQuizHistory]       = useState([])
   const [todayQuizDone,     setTodayQuizDone]     = useState(false)
   const [devQuizUnlocked,   setDevQuizUnlocked]   = useState(false)
@@ -85,8 +88,14 @@ export default function App() {
     if (localStorage.getItem('cq_version') !== '2') {
       localStorage.clear()
       localStorage.setItem('cq_version', '2')
+      setPlayerXp(0)
     }
   }, [])
+
+  // Persist XP to localStorage
+  useEffect(() => {
+    localStorage.setItem('cq_xp', String(playerXp))
+  }, [playerXp])
 
   // GPS watch (position + permission)
   useEffect(() => {
@@ -137,6 +146,19 @@ export default function App() {
     return () => clearTimeout(t)
   }, [discoveryQueue[0]?.id])
 
+  function discoverAllGpsQuests() {
+    const toDiscover = questsRef.current.filter(q =>
+      q.status === 'locked' &&
+      q.discoveryMethod === 'gps' &&
+      !discoveredIds.current.has(q.id)
+    )
+    if (!toDiscover.length) return
+    toDiscover.forEach(q => discoveredIds.current.add(q.id))
+    const ids = new Set(toDiscover.map(q => q.id))
+    setQuests(prev => prev.map(q => ids.has(q.id) ? { ...q, status: 'discovered' } : q))
+    setDiscoveryQueue(prev => [...prev, ...toDiscover])
+  }
+
   function toggleTask(questId, taskId) {
     setQuests(prev =>
       prev.map(q =>
@@ -181,8 +203,17 @@ export default function App() {
     todayQuizDone,
     onQuizComplete:      handleQuizComplete,
     devQuizUnlocked,
-    onDevUnlockQuiz:     () => setDevQuizUnlocked(true),
-    onDevResetQuiz:      () => { setTodayQuizDone(false); setDevQuizUnlocked(false) },
+    onDevUnlockQuiz:    () => setDevQuizUnlocked(true),
+    onDevResetAll:      () => {
+      setPlayerXp(0)
+      setQuests(INITIAL_QUESTS)
+      setTodayQuizDone(false)
+      setDevQuizUnlocked(false)
+      setQuizHistory([])
+      discoveredIds.current = new Set()
+    },
+    onDevDiscoverAll:   discoverAllGpsQuests,
+    onDevAdd100Xp:      () => setPlayerXp(prev => prev + 100),
     playerPos,
     locationPermission,
     onDiscoverNearby:    checkNearby,

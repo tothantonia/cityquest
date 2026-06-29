@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { MapPin, ChevronRight, Star, HelpCircle, Clock } from 'lucide-react'
-import { PLAYER, getDailyFact, NPCS, CAT } from '../data/gameData'
+import { PLAYER, getDailyFact, NPCS, CAT, xpToLevel, levelXpBounds } from '../data/gameData'
 import { isQuizAvailable, unlockCountdown } from '../utils/quizTime'
 import DevMenu from '../components/DevMenu'
 
@@ -20,7 +20,9 @@ function Header({ playerXp, onDevTap }) {
     }
   }
 
-  const pct = (playerXp / PLAYER.xpMax) * 100
+  const level        = xpToLevel(playerXp)
+  const { min, max } = levelXpBounds(level)
+  const pct          = max != null ? ((playerXp - min) / (max - min)) * 100 : 100
   return (
     <header className="home-header">
       <div className="home-header-row">
@@ -37,7 +39,7 @@ function Header({ playerXp, onDevTap }) {
         <div className="home-header-right">
           <div className="home-level-badge">
             <span className="home-lvl-tag">LVL</span>
-            <span className="home-lvl-num">{PLAYER.level}</span>
+            <span className="home-lvl-num">{level}</span>
           </div>
           <span className="home-player-name">{PLAYER.name}</span>
         </div>
@@ -47,7 +49,7 @@ function Header({ playerXp, onDevTap }) {
           <div className="pbar-fill" style={{ width: `${pct}%` }} />
         </div>
         <span className="home-xp-label">
-          {playerXp} / {PLAYER.xpMax} XP
+          {max != null ? `${playerXp} / ${max} XP` : `${playerXp} XP`}
         </span>
       </div>
     </header>
@@ -241,7 +243,7 @@ function SectionDivider({ label }) {
 }
 
 // ─── Screen ───────────────────────────────────────────────────
-export default function HomeScreen({ quests, onNavigate, onNpcTap, playerXp, todayQuizDone, devQuizUnlocked, onDevUnlockQuiz, onDevResetQuiz }) {
+export default function HomeScreen({ quests, onNavigate, onNpcTap, playerXp, todayQuizDone, devQuizUnlocked, onDevUnlockQuiz, onDevResetAll, onDevDiscoverAll, onDevAdd100Xp }) {
   const [devMenuOpen, setDevMenuOpen] = useState(false)
   const discovered = quests.filter(q => q.status === 'discovered')
   const inProgress = discovered.filter(q => q.tasks.some(t => t.done))
@@ -270,8 +272,10 @@ export default function HomeScreen({ quests, onNavigate, onNpcTap, playerXp, tod
       {devMenuOpen && (
         <DevMenu
           onClose={() => setDevMenuOpen(false)}
-          onUnlockQuiz={() => { onDevUnlockQuiz(); setDevMenuOpen(false) }}
-          onResetQuiz={() => { onDevResetQuiz(); setDevMenuOpen(false) }}
+          onUnlockQuiz={   () => { onDevUnlockQuiz();    setDevMenuOpen(false) }}
+          onResetAll={     () => { onDevResetAll();      setDevMenuOpen(false) }}
+          onDiscoverAll={  () => { onDevDiscoverAll();   setDevMenuOpen(false) }}
+          onAdd100Xp={     () => { onDevAdd100Xp();      setDevMenuOpen(false) }}
         />
       )}
     </div>

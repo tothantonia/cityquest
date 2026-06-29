@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Lock, Coins, ChevronRight } from 'lucide-react'
-import { PLAYER, CAT } from '../data/gameData'
+import { PLAYER, CAT, xpToLevel, levelXpBounds } from '../data/gameData'
 
 // ─── Static profile data ──────────────────────────────────────
 const COINS = 0
@@ -30,18 +30,22 @@ function AvatarSection() {
 
 // ─── Level card ───────────────────────────────────────────────
 function LevelCard({ playerXp }) {
-  const pct = (playerXp / PLAYER.xpMax) * 100
+  const level        = xpToLevel(playerXp)
+  const { min, max } = levelXpBounds(level)
+  const pct          = max != null ? ((playerXp - min) / (max - min)) * 100 : 100
   return (
     <div className="profile-level-card">
       <div className="profile-lvl-badge">
         <span className="profile-lvl-tag">LVL</span>
-        <span className="profile-lvl-num">{PLAYER.level}</span>
+        <span className="profile-lvl-num">{level}</span>
       </div>
       <div className="profile-level-right">
         <div className="pbar-track" style={{ height: 6 }}>
           <div className="pbar-fill" style={{ width: `${pct}%` }} />
         </div>
-        <span className="profile-xp-label">{playerXp} / {PLAYER.xpMax} XP</span>
+        <span className="profile-xp-label">
+          {max != null ? `${playerXp} / ${max} XP` : `${playerXp} XP`}
+        </span>
       </div>
     </div>
   )
