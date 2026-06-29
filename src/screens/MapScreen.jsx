@@ -8,8 +8,8 @@ import { CAT } from '../data/gameData'
 // ─── Constants ────────────────────────────────────────────────
 const CENTER   = [51.5130, -0.1000]
 const ZOOM     = 13
-const TILE_URL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-const TILE_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a>'
+const TILE_URL = 'https://{s}.basemaps.cartocdn.com/dark_matter/{z}/{x}/{y}{r}.png'
+const TILE_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap contributors</a> &copy; <a href="https://carto.com/attributions" target="_blank">CARTO</a>'
 
 const CAT_COLORS = {
   Exploration: '#4a7fc9',
